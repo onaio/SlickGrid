@@ -142,7 +142,7 @@
       }
 
       if (args.pageNum != undefined) {
-        pagenum = Math.min(args.pageNum, Math.max(0, Math.ceil(totalRows / pagesize) - 1));
+        pagenum = args.pageNum;
       }
 
       if (args.totalPages != undefined) {
