@@ -71,7 +71,6 @@
     var pagesize = 0;
     var pagenum = 0;
     var totalRows = 0;
-    var totalPages = 1;
 
     // events
     var onRowCountChanged = new Slick.Event();
@@ -145,8 +144,8 @@
         pagenum = args.pageNum;
       }
 
-      if (args.totalPages != undefined) {
-        totalPages = args.totalPages;
+      if (args.totalRows != undefined) {
+        totalRows = args.totalRows;
       }
 
       onPagingInfoChanged.notify(getPagingInfo(), null, self);
@@ -155,6 +154,7 @@
     }
 
     function getPagingInfo() {
+      var totalPages = pagesize ? Math.ceil(totalRows / pageSize) : 1;
       return {pageSize: pagesize, pageNum: pagenum, totalRows: totalRows, totalPages: totalPages};
     }
 
