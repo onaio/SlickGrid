@@ -144,13 +144,16 @@
         pagenum = Math.min(args.pageNum, Math.max(0, Math.ceil(totalRows / pagesize) - 1));
       }
 
+      if (args.totalPages != undefined) {
+        totalPages = args.totalPages;
+      }
+
       onPagingInfoChanged.notify(getPagingInfo(), null, self);
 
       refresh();
     }
 
     function getPagingInfo() {
-      var totalPages = pagesize ? Math.max(1, Math.ceil(totalRows / pagesize)) : 1;
       return {pageSize: pagesize, pageNum: pagenum, totalRows: totalRows, totalPages: totalPages};
     }
 
