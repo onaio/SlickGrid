@@ -154,7 +154,7 @@
     }
 
     function getPagingInfo() {
-      var totalPages = pagesize ? Math.ceil(totalRows / pageSize) : 1;
+      var totalPages = pagesize ? Math.ceil(totalRows / pagesize) : 1;
       return {pageSize: pagesize, pageNum: pagenum, totalRows: totalRows, totalPages: totalPages};
     }
 
